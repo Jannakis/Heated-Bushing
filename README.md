@@ -1,28 +1,27 @@
-## Overview
-This repository contains a prototype heating and closed-loop temperature control system designed to keep a mechanical bushing at a stable target temperature. The focus is reliable setpoint tracking and improved temperature uniformity across the component.
+# Heated 3D-Printed Bushing (Closed-Loop Temperature Control)
 
-## Hardware
-- 3D-printed bushing with integrated heating cavities/channels filled with conductive silver paste for resistive (Joule) heating
-- DC power supply for heating power
-- PWM power stage using a logic-level MOSFET (e.g., IRLZ44N) driven directly from an Arduino (5 V)
-- Temperature sensing with an NTC thermistor (GA2K7MCD1) in a voltage-divider measurement chain
-<img width="535" height="421" alt="grafik" src="https://github.com/user-attachments/assets/4c7cb4f1-28a0-44ab-bd33-aaa3cfd3669b" />
+This repository contains a prototype **closed-loop temperature control system** for an **FDM 3D-printed polycarbonate (PC) bushing** with **integrated heating channels**. The channels are filled with a **silver-filled conductive adhesive** (LOCTITE ABLESTIK 2030SC) and act as an embedded resistor for **Joule heating**. Heating power is controlled via an Arduino-driven PWM MOSFET stage using feedback from NTC thermistors.
 
+## Highlights
+- Embedded resistive heater: **3D-printed channels + conductive silver adhesive**
+- Power stage: **DC supply + PWM + logic-level MOSFET**
+- Sensing: **NTC thermistors (GA2K7MCD1)** via voltage divider
+- Control: **PI controller** (selected after PID tuning trials) with anti-windup concept
+- Target setpoint used in evaluation: **60 °C**
 
-## Wiring
-<img width="971" height="427" alt="grafik" src="https://github.com/user-attachments/assets/30a0f34d-0683-450e-8673-bfcfab30dec0" />
-<img width="388" height="378" alt="grafik" src="https://github.com/user-attachments/assets/d8351435-de2a-4b66-a796-7f1531516db0" />
+## Repository Structure (recommended)
+- `firmware/` – Arduino code (PWM + control + logging)
+- `cad/` – CAD files for bushing iterations / channel designs
+- `docs/` – documentation and results
+- `measurements/` – raw logs and evaluation data
+- `images/` or `docs/images/` – figures used in the documentation
 
+## Documentation
+For details (manufacturing, wiring, controller design, experiments, thermography), see:
+- `docs/report-summary.md`
 
-## Control Strategy
-- Step-response experiments were used to characterize the thermal behavior (PT1-like / first-order)
-- Classical PID tuning approaches (Ziegler–Nichols, Cohen–Coon) were tested but produced excessive overshoot
-- A PI controller was chosen as a simpler and more robust solution for this thermal system
-- Anti-windup: integral action is enabled only above a defined temperature threshold to reduce accumulation during warm-up
+## Images
+Add your key figures here or place them in `docs/images/` and link them below.
 
-## Results
-- Stable regulation to a defined temperature setpoint was achieved in most test cases
-- The system can maintain temperature reliably using PWM power control and sensor feedback
-- Limitations and improvement potential are documented (sensor placement, test stand consistency, temperature uniformity)
-<img width="784" height="467" alt="grafik" src="https://github.com/user-attachments/assets/1f3b29f4-6ba0-48ab-b7b8-6f6fb8d18c25" />
-
+Example:
+![System overview](docs/images/system_overview.png)
