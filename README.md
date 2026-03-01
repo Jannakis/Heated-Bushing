@@ -12,13 +12,13 @@ This repository contains a prototype **closed-loop temperature control system** 
 ## Repository Structure (recommended)
 - `firmware/` – Arduino code (PWM + control + logging)
 - `cad/` – CAD files for bushing iterations / channel designs
-- `docs/` – results
+- `docs/` – results and documentation
 - `measurements/` – raw logs and evaluation data
 - `images/` or `docs/images/` – figures used in the documentation
 
 ## Documentation
 For details (manufacturing, wiring, controller design, experiments, thermography), see:
-- `docs/report-summary.md`
+- `docs/results.md`
 
 ## Images
 Add your key figures here or place them in `docs/images/` and link them below.
