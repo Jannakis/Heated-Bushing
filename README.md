@@ -6,6 +6,13 @@ This repository contains a prototype heating and closed-loop temperature control
 - DC power supply for heating power
 - PWM power stage using a logic-level MOSFET (e.g., IRLZ44N) driven directly from an Arduino (5 V)
 - Temperature sensing with an NTC thermistor (GA2K7MCD1) in a voltage-divider measurement chain
+<img width="535" height="421" alt="grafik" src="https://github.com/user-attachments/assets/4c7cb4f1-28a0-44ab-bd33-aaa3cfd3669b" />
+
+
+## Wiring
+<img width="971" height="427" alt="grafik" src="https://github.com/user-attachments/assets/30a0f34d-0683-450e-8673-bfcfab30dec0" />
+<img width="388" height="378" alt="grafik" src="https://github.com/user-attachments/assets/d8351435-de2a-4b66-a796-7f1531516db0" />
+
 
 ## Control Strategy
 - Step-response experiments were used to characterize the thermal behavior (PT1-like / first-order)
@@ -17,8 +24,5 @@ This repository contains a prototype heating and closed-loop temperature control
 - Stable regulation to a defined temperature setpoint was achieved in most test cases
 - The system can maintain temperature reliably using PWM power control and sensor feedback
 - Limitations and improvement potential are documented (sensor placement, test stand consistency, temperature uniformity)
+<img width="784" height="467" alt="grafik" src="https://github.com/user-attachments/assets/1f3b29f4-6ba0-48ab-b7b8-6f6fb8d18c25" />
 
-## Lessons Learned / Improvement Ideas
-- Integrating the sensor closer to the thermal hotspot would reduce measurement delay
-- A more consistent test setup would reduce ambient disturbances (e.g., airflow, opened windows, people passing by)
-- Thermal design adjustments (e.g., denser heating paths near high-loss edges) could improve uniformity
