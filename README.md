@@ -111,4 +111,4 @@ Thermographic analysis (HIKMICRO, ε = 0.9, evaluated in Python) reveals the mai
 - `firmware/` – Arduino code (PWM, PI controller, logging)
 - `cad/` – bushing iterations and channel designs
 - `docs/` – documentation and figures
-- `measurements/` – raw logs and evaluation scripts
+
